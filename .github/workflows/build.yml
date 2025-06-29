@@ -29,9 +29,6 @@ jobs:
       - name: Build EXE
         run: pyinstaller --onefile hrtr1_fixed.py
 
-      - name: List contents of dist folder
-        run: dir dist
-
       - name: Check EXE exists
         run: |
           if not exist dist\hrtr1_fixed.exe (
