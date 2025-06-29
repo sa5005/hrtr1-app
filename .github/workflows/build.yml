@@ -8,15 +8,15 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - name: Checkout repo
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: 3.11
 
-    - name: Install pyinstaller
+    - name: Install dependencies
       run: pip install pyinstaller
 
     - name: Build EXE
@@ -25,5 +25,5 @@ jobs:
     - name: Upload EXE
       uses: actions/upload-artifact@v4
       with:
-        name: hrtr1_fixed-exe
+        name: hrtr1_exe
         path: dist/hrtr1_fixed.exe
